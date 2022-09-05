@@ -19,7 +19,7 @@ case "$1" in
 		    echo "SKIPPED"
 		    exit 0
 		fi
-		start-stop-daemon -b -q -S -p /var/run/inadyn.pid -x /usr/sbin/inadyn
+		start-stop-daemon -b -q -S -p /var/run/inadyn.pid -x /usr/bin/inadyn
 		[ $? = 0 ] && echo "OK" || echo "FAIL"
 		;;
 	stop)
@@ -28,7 +28,7 @@ case "$1" in
 		    echo "SKIPPED"
 		    exit 0
 		fi
-		start-stop-daemon -q -K -p /var/run/inadyn.pid -x /usr/sbin/inadyn
+		start-stop-daemon -q -K -p /var/run/inadyn.pid -x /usr/bin/inadyn
 		[ $? = 0 ] && echo "OK" || echo "FAIL"
 		rm -f /var/run/inadyn.pid
 		;;
